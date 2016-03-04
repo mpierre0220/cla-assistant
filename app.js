@@ -1,0 +1,12 @@
+var http = require('http');
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Initialize server
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+console.log("initializing the server");
+var app = require('./src/server/app.js');
+console.log("after require app.js");
+http.createServer(app).listen(config.server.localport).on('listening', function() {
+
+});
