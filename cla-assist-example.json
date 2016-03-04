@@ -1,0 +1,10 @@
+{
+	"data": [
+			"gitclient": "xxx",
+			"gitsecret": "xxx",
+			"gituser": "xxx",
+			"gitpassword":"xxx",
+			"host":"xxx",
+			"protocol":"xxx"			
+	]
+}

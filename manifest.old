@@ -1,7 +1,0 @@
-applications:
-- name:      cla-mgr
-  mem:       128M
-  host:      cla-mgr
-  services: mongo-for-cla
-
- 
