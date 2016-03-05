@@ -5,7 +5,6 @@
  * @overview Configuration Module
  */
 var path = require('path');
-var json = require('JSON');
 var console = require("console");
 //"dbSettings" : {
 //    "user"    : process.env.VCAP_SERVICES["etherpadDB"][0]["credentials"]["user"], 
