@@ -55,7 +55,7 @@ module.exports = {
         http: {
             protocol: cla_data.data["protocol"] || 'http',
             host: cla_data.data["host"] || 'cla-assistant.io',
-            port: process.env.VCAP_APP_PORT
+             port: process.env.VCAP_APP_PORT
         },
 
         security: {
