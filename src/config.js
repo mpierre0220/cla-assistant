@@ -41,7 +41,7 @@ module.exports = {
 
             // required
             user: cla_data.data["gituser"],
-            pass: cla_data.data["gitpassword"],
+             pass: cla_data.data["gitpassword"],
 
             token: process.env.GITHUB_TOKEN,
 
