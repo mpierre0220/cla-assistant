@@ -1,0 +1,14 @@
+{
+  "ServiceId": "com.ibm.cloudoe.orion.client.deploy",
+  "Params": {
+    "Target": {
+      "Url": "https://api.ng.bluemix.net",
+      "Org": "mpierre-@us.ibm.com",
+      "Space": "dev"
+    },
+    "Name": "cla-assistant",
+    "Instrumentation": {}
+  },
+  "Path": "",
+  "Type": "Cloud Foundry"
+}
