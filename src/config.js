@@ -15,33 +15,31 @@ var    services = JSON.parse(process.env.VCAP_SERVICES);
 var    url=services["mongodb-2.4"][0].credentials.url; 
 console.log("url =  "+url);
 //{
-//	"data": [
 //			"gitclient": "xxx",
 //			"gitsecret": "xxx",
 //			"gituser": "xxx",
 //			"gitpassword":"xxx",
 //			"host"b"xxx",
 //			"protocol":"https"			
-//	]
 //}
 var cla_data=require('../cla-assist-data.json');
 module.exports = {
     server: {
         github: { 
             // optional
-            protocol: cla_data.data["protocol"] || 'https',
+            protocol: cla_data.protocol || 'https',
             host: process.env.GITHUB_HOST || 'github.com',
             api: process.env.GITHUB_API_HOST || 'api.github.com',
             enterprise: !!process.env.GITHUB_HOST, // flag enterprise version
             version: process.env.GITHUB_VERSION || '3.0.0',
 
             // required
-            client: cla_data.data["gitclient"],
-            secret: cla_data.data["gitsecret"],
+            client: cla_data.gitclient,
+            secret: cla_data.gitsecret,
 
             // required
-            user: cla_data.data["gituser"],
-             pass: cla_data.data["gitpassword"],
+            user: cla_data.gituser,
+            pass: cla_data.gitpassword,
 
             token: process.env.GITHUB_TOKEN,
 
@@ -54,8 +52,8 @@ module.exports = {
         always_recompile_sass: process.env.NODE_ENV === 'production' ? false : true,
 
         http: {
-            protocol: cla_data.data["protocol"] || 'http',
-            host: cla_data.data["host"] || 'cla-assistant.io',
+            protocol: cla_data.protocol || 'http',
+            host: cla_data.host || 'cla-assistant.io',
             port: process.env.VCAP_APP_PORT
         },
 
