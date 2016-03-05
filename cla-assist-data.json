@@ -1,10 +1,6 @@
 {
-	"data": [
-			"gitclient": "xxx",
-			"gitsecret": "xxx",
-			"gituser": "xxx",
-			"gitpassword":"xxx",
-			"host":"xxx",
-			"protocol":"xxx"			
-	]
+	"gitclient": "936f9f62bc765410d54d",
+	"gituser": "mpierre0220",
+	"host": "cla-mgr-le.mybluemix.net",
+	"protocol": "https"				
 }
