@@ -1,6 +1,6 @@
 {
   "name": "cla-assistant",
-  "author": "https://github.com/cla-assistant",
+  "author": "https://github.com/mpierre0220/cla-assistant",
   "version": "1.0.0",
   "homepage": "",
   "description": "Contributor licencse agreement",
@@ -14,9 +14,9 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cla-assistant/cla-assistant"
+    "url": "https://github.com/mpierre0220/cla-assistant"
   },
-  "bugs": "https://github.com/cla-assistant/cla-assistant/issues",
+  "bugs": "https://github.com/mpierre0220/cla-assistant/issues",
   "contributors": [],
   "dependencies": {
     "array-sugar": "^1.2.2",

@@ -6,19 +6,13 @@
  */
 var path = require('path');
 var console = require("console");
-//"dbSettings" : {
-//    "user"    : process.env.VCAP_SERVICES["etherpadDB"][0]["credentials"]["user"], 
-//    "host"    : process.env.VCAP_SERVICES["etherpadDB"][0]["host"], 
-//    "password": process.env.VCAP_SERVICES["etherpadDB"][0]["password"], 
-//    "database": process.env.VCAP_SERVICES["etherpadDB"][0]["name"]
+
 var    services = JSON.parse(process.env.VCAP_SERVICES);
 var    url=services["mongodb-2.4"][0].credentials.url; 
 console.log("url =  "+url);
 //{
 //			"gitclient": "xxx",
-//			"gitsecret": "xxx",
 //			"gituser": "xxx",
-//			"gitpassword":"xxx",
 //			"host"b"xxx",
 //			"protocol":"https"			
 //}
@@ -35,11 +29,11 @@ module.exports = {
 
             // required
             client: cla_data.gitclient,
-            secret: cla_data.gitsecret,
+            secret: process.env.gitsecret,
 
             // required
             user: cla_data.gituser,
-            pass: cla_data.gitpassword,
+            pass: process.env.gitpassword,
 
             token: process.env.GITHUB_TOKEN,
 
