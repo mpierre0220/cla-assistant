@@ -12,7 +12,7 @@ var json = requires('JSON');
 //    "password": process.env.VCAP_SERVICES["etherpadDB"][0]["password"], 
 //    "database": process.env.VCAP_SERVICES["etherpadDB"][0]["name"]
 var    url=process.env.VCAP_SERVICES["mongodb-2.4"][0].credentials.url;
-console.log("url = "+url);
+console.log("url =  "+url);
 //{
 //	"data": [
 //			"gitclient": "xxx",
@@ -26,7 +26,7 @@ console.log("url = "+url);
 var cla_data=require('cla-assist-data.json');
 module.exports = {
     server: {
-        github: {
+        github: { 
             // optional
             protocol: cla_data.cla-assist-data["protocol"], || 'https',
             host: process.env.GITHUB_HOST || 'github.com',
