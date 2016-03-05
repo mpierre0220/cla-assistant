@@ -19,28 +19,28 @@ console.log("url = "+url);
 //			"gitsecret": "xxx",
 //			"gituser": "xxx",
 //			"gitpassword":"xxx",
-//			"host":"xxx",
+//			"host"b"xxx",
 //			"protocol":"https"			
 //	]
 //}
-var cla-data=require('cla-assist-data.json');
+var cla_data=require('cla-assist-data.json');
 module.exports = {
     server: {
         github: {
             // optional
-            protocol: cla-data.cla-assist-data["protocol"], || 'https',
+            protocol: cla_data.cla-assist-data["protocol"], || 'https',
             host: process.env.GITHUB_HOST || 'github.com',
             api: process.env.GITHUB_API_HOST || 'api.github.com',
             enterprise: !!process.env.GITHUB_HOST, // flag enterprise version
             version: process.env.GITHUB_VERSION || '3.0.0',
 
             // required
-            client: cla-data.cla-assist-data["gitclient"],
-            secret: cla-data.cla-assist-data["gitsecret"],
+            client: cla_data.cla-assist-data["gitclient"],
+            secret: cla_data.cla-assist-data["gitsecret"],
 
             // required
-            user: cla-data.cla-assist-data["gituser"],
-            pass: cla-data.cla-assist-data["gitpassword"],
+            user: cla_data.cla-assist-data["gituser"],
+            pass: cla_data.cla-assist-data["gitpassword"],
 
             token: process.env.GITHUB_TOKEN,
 
@@ -53,8 +53,8 @@ module.exports = {
         always_recompile_sass: process.env.NODE_ENV === 'production' ? false : true,
 
         http: {
-            cla-data.cla-assist-data["protocol"] || 'http',
-            host: cla-data.cla-assist-data["host"] || 'cla-assistant.io',
+            cla_data.cla-assist-data["protocol"] || 'http',
+            host: cla_data.cla-assist-data["host"] || 'cla-assistant.io',
             port: process.env.VCAP_APP_PORT
         },
 
