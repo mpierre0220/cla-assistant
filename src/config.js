@@ -11,7 +11,8 @@ var console = require("console");
 //    "host"    : process.env.VCAP_SERVICES["etherpadDB"][0]["host"], 
 //    "password": process.env.VCAP_SERVICES["etherpadDB"][0]["password"], 
 //    "database": process.env.VCAP_SERVICES["etherpadDB"][0]["name"]
-var    url=process.env.VCAP_SERVICES["mongodb-2.4"][0].credentials.url; 
+var    services = JSON.parse(process.env.VCAP_SERVICES);
+var    url=services["mongodb-2.4"][0].credentials.url; 
 console.log("url =  "+url);
 //{
 //	"data": [
