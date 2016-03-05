@@ -28,7 +28,7 @@ module.exports = {
     server: {
         github: { 
             // optional
-            protocol: cla_data.data["protocol"], || 'https',
+            protocol: cla_data.data["protocol"] || 'https',
             host: process.env.GITHUB_HOST || 'github.com',
             api: process.env.GITHUB_API_HOST || 'api.github.com',
             enterprise: !!process.env.GITHUB_HOST, // flag enterprise version
