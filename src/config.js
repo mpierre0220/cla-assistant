@@ -24,7 +24,7 @@ console.log("url =  "+url);
 //			"protocol":"https"			
 //	]
 //}
-var cla_data=require('cla-assist-data.json');
+var cla_data=require('../cla-assist-data.json');
 module.exports = {
     server: {
         github: { 
