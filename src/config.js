@@ -5,24 +5,42 @@
  * @overview Configuration Module
  */
 var path = require('path');
-
+var json = requires('JSON');
+//"dbSettings" : {
+//    "user"    : process.env.VCAP_SERVICES["etherpadDB"][0]["credentials"]["user"], 
+//    "host"    : process.env.VCAP_SERVICES["etherpadDB"][0]["host"], 
+//    "password": process.env.VCAP_SERVICES["etherpadDB"][0]["password"], 
+//    "database": process.env.VCAP_SERVICES["etherpadDB"][0]["name"]
+var    url=process.env.VCAP_SERVICES["mongodb-2.4"][0].credentials.url;
+console.log("url = "+url)
+//{
+//	"data": [
+//			"gitclient": "xxx",
+//			"gitsecret": "xxx",
+//			"gituser": "xxx",
+//			"gitpassword":"xxx",
+//			"host":"xxx",
+//			"protocol":"https"			
+//	]
+//}
+var cla-data=require('cla-assist-data.json');
 module.exports = {
     server: {
         github: {
             // optional
-            protocol: process.env.GITHUB_PROTOCOL || 'https',
+            protocol: cla-data.cla-assist-data["protocol"], || 'https',
             host: process.env.GITHUB_HOST || 'github.com',
             api: process.env.GITHUB_API_HOST || 'api.github.com',
             enterprise: !!process.env.GITHUB_HOST, // flag enterprise version
             version: process.env.GITHUB_VERSION || '3.0.0',
 
             // required
-            client: process.env.GITHUB_CLIENT,
-            secret: process.env.GITHUB_SECRET,
+            client: cla-data.cla-assist-data["gitclient"],
+            secret: cla-data.cla-assist-data["gitsecret"],
 
             // required
-            user: process.env.GITHUB_USER,
-            pass: process.env.GITHUB_PASS,
+            user: cla-data.cla-assist-data["gituser"],
+            pass: cla-data.cla-assist-data["gitpassword"],
 
             token: process.env.GITHUB_TOKEN,
 
@@ -35,8 +53,8 @@ module.exports = {
         always_recompile_sass: process.env.NODE_ENV === 'production' ? false : true,
 
         http: {
-            protocol: process.env.PROTOCOL || 'http',
-            host: process.env.HOST || 'cla-assistant.io',
+            cla-data.cla-assist-data["protocol"] || 'http',
+            host: cla-data.cla-assist-data["host"] || 'cla-assistant.io',
             port: process.env.VCAP_APP_PORT
         },
 
@@ -58,7 +76,7 @@ module.exports = {
         },
 
         mongodb: {
-            uri: process.env.MONGODB || process.env.MONGOLAB_URI
+            uri: url || process.env.MONGOLAB_URI
         },
 
         slack: {
