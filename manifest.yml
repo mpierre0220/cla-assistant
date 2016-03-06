@@ -1,5 +1,5 @@
 applications:
-- name:      cla-mgr
+- name:      cla-mgr-le
   mem:       128M
   host:      cla-mgr-le
 services: 
