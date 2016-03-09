@@ -13,7 +13,7 @@ console.log("url =  "+url);
 //{
 //			"gitclient": "xxx",
 //			"gituser": "xxx",
-//			"host"b"xxx",
+//			"host":"xxx",
 //			"protocol":"https"			
 //}
 var cla_data=require('../cla-assist-data.json');
@@ -48,7 +48,7 @@ module.exports = {
         http: {
             protocol: cla_data.protocol || 'http',
             host: cla_data.host || 'cla-assistant.io',
-            //port: process.env.VCAP_APP_PORT
+            port: process.env.HOST_PORT
         },
 
         security: {

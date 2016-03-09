@@ -60,7 +60,7 @@ app.use('/count', require('./middleware/param'));
 // });
 
 var bootstrap = function(files, callback) {
-    console.log('bootstrap'.bold, files.bold);
+    console.log('bootstrapping'.bold, files.bold);
 
     async.eachSeries(config.server[files], function(p, cb) {
         glob(p, function(err, file) {
@@ -89,6 +89,7 @@ var bootstrap = function(files, callback) {
                     console.log('✓ '.bold.green + path.relative(process.cwd(), f));
                 });
             }
+            console.log('calling callback '+cb);
             cb();
         });
     }, callback);
@@ -167,6 +168,7 @@ async.series([
     },
 
     function(callback) {
+    	console.log("bootstrapping webhooks using: "+callback);
         bootstrap('webhooks', callback);
     }
 ], function(err) {
