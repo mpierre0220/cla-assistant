@@ -56,7 +56,7 @@ app.use('/count', require('./middleware/param'));
 
 // app.use(function (err, req, res, next) {
 //     var log = require('./services/logger');
-//     log.info('app error: ', err.stack);
+//     log.info('app error: ', err.stack);bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 // });
 
 var bootstrap = function(files, callback) {
@@ -170,6 +170,7 @@ async.series([
     function(callback) {
     	console.log("bootstrapping webhooks using: "+callback);
         bootstrap('webhooks', callback);
+        console.log("now webhooks points to "+webhooks);
     }
 ], function(err) {
     if (err) {
