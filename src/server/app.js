@@ -83,8 +83,9 @@ var bootstrap = function(files, callback) {
                         } else if (files === 'webhooks'){
                         	var bn=path.basename(f,'.js');
                         	console.log("bn="+bn);
-                        	webhooks[bn] = require(f);
+                        	wbebhooks[bn] = require(f);
                         	console.log("webhooks = "+JSON.stringify(webhooks[bn]) );
+                        	console.log("webhooks raw= "+webhooks[bn]);
                         }
                     } catch (ex) {
                         console.log('✖ '.bold.red + path.relative(process.cwd(), f));
