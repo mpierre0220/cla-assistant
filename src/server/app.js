@@ -82,7 +82,7 @@ var bootstrap = function(files, callback) {
                             global.models = merge(global.models, require(f));
                         } else if (files === 'webhooks'){
                         	webhooks[path.basename(f,'.js')] = require(f);
-                        	console.log("webhooks = "+JSON.stringify(webhooks[path.basename(f,'.js')]));
+                        	console.log("webhooks = "+JSON.stringify(webhooks[path.basename(f,'.js')]) );
                         }
                     } catch (ex) {
                         console.log('✖ '.bold.red + path.relative(process.cwd(), f));
@@ -173,7 +173,7 @@ async.series([
     function(callback) {
     	console.log("bootstrapping webhooks using: "+callback);
         bootstrap('webhooks', callback);
-        console.log("now webhooks[" + path.basename(f,'.js')+"] points to "+JSON.stringify(webhooks[path.basename(f,'.js')]));
+        console.log("now webhooks[pull_request.js] points to "+JSON.stringify(webhooks[pull_request.js]));
     }
 ], function(err) {
     if (err) {
