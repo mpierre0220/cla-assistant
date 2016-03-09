@@ -1,4 +1,4 @@
-b/**
+/**
  * Configuration Module
  *
  * @title config
