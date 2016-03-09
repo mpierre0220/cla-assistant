@@ -82,7 +82,7 @@ var bootstrap = function(files, callback) {
                             global.models = merge(global.models, require(f));
                         } else if (files === 'webhooks'){
                         	webhooks[path.basename(f,'.js')] = require(f);
-                        	console.log("webhooks = "+webhooks);
+                        	console.log("webhooks = "+JSON.stringify(webhooks));
                         }
                     } catch (ex) {
                         console.log('✖ '.bold.red + path.relative(process.cwd(), f));
@@ -212,7 +212,7 @@ app.all('/api/:obj/:fun', function(req, res) {
 app.all('/github/webhook/:repo', function(req, res) {
     var event = req.headers['x-github-event'];
     console.log('event ', event);
-    console.log("webhooks = "+webhooks);
+    console.log("webhooks = "+JSON.stringify(webhooks));
     try {
         if (!webhooks[event]) {
             return res.status(400).send('Unsupported event');
