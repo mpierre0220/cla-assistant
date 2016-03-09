@@ -216,7 +216,7 @@ app.all('/github/webhook/:repo', function(req, res) {
     var event = req.headers['x-github-event'];
     console.log('event ', event);
     try {
-    	console.log("webhooks = "+JSON.stringify(webhooks[event]));
+    	console.log("webhooks = "+webhooks[event]);
         if (!webhooks[event]) {
             return res.status(400).send('Unsupported event');
         }
