@@ -82,7 +82,7 @@ var bootstrap = function(files, callback) {
                             global.models = merge(global.models, require(f));
                         } else if (files === 'webhooks'){
                         	webhooks[path.basename(f,'.js')] = require(f);
-                        	console.log("webhooks = "+JSON.stringify(webhooks[]));
+                        	console.log("webhooks = "+JSON.stringify(webhooks[path.basename(f,'.js')]));
                         }
                     } catch (ex) {
                         console.log('✖ '.bold.red + path.relative(process.cwd(), f));
