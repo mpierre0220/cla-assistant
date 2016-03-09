@@ -173,7 +173,7 @@ async.series([
     function(callback) {
     	console.log("bootstrapping webhooks using: "+callback);
         bootstrap('webhooks', callback);
-        console.log("now webhooks[pull_request.js] points to "+JSON.stringify(webhooks[pull_request.js]));
+        console.log("now webhooks['pull_request.js'] points to "+JSON.stringify(webhooks['pull_request.js']));
     }
 ], function(err) {
     if (err) {
@@ -212,8 +212,8 @@ app.all('/api/:obj/:fun', function(req, res) {
 app.all('/github/webhook/:repo', function(req, res) {
     var event = req.headers['x-github-event'];
     console.log('event ', event);
-    console.log("webhooks = "+JSON.stringify(webhooks[event]));
     try {
+    	console.log("webhooks = "+JSON.stringify(webhooks[event]));
         if (!webhooks[event]) {
             return res.status(400).send('Unsupported event');
         }
