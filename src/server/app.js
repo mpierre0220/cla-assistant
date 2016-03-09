@@ -56,7 +56,7 @@ app.use('/count', require('./middleware/param'));
 
 // app.use(function (err, req, res, next) {
 //     var log = require('./services/logger');
-//     log.info('app error: ', err.stack);bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+//     log.info('app error: ', err.stack);
 // });
 
 var bootstrap = function(files, callback) {
@@ -82,6 +82,7 @@ var bootstrap = function(files, callback) {
                             global.models = merge(global.models, require(f));
                         } else if (files === 'webhooks'){
                         	webhooks[path.basename(f,'.js')] = require(f);
+                        	console.log("webhooks = "+webhooks);
                         }
                     } catch (ex) {
                         console.log('✖ '.bold.red + path.relative(process.cwd(), f));
@@ -211,6 +212,7 @@ app.all('/api/:obj/:fun', function(req, res) {
 app.all('/github/webhook/:repo', function(req, res) {
     var event = req.headers['x-github-event'];
     console.log('event ', event);
+    console.log("webhooks = "+webhooks);
     try {
         if (!webhooks[event]) {
             return res.status(400).send('Unsupported event');
