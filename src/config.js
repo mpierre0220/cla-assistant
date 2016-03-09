@@ -11,7 +11,7 @@ var    services = JSON.parse(process.env.VCAP_SERVICES);
 var    url=services["mongodb-2.4"][0].credentials.url; 
 console.log("url =  "+url);
 //{
-//			"gitclient": "xxx",
+//			"gitclient":"xxx",
 //			"gituser": "xxx",
 //			"host":"xxx",
 //			"protocol":"https"			
