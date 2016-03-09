@@ -6,9 +6,8 @@
       "Org": "mpierre-@us.ibm.com",
       "Space": "dev"
     },
-    "Name": "cla-mgr-le",
+    "Name": "cla-mgr",
     "Instrumentation": {
-      "host": "cla-mgr-le",
       "domain": "mybluemix.net"
     }
   },
