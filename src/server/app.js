@@ -173,7 +173,7 @@ async.series([
     function(callback) {
     	console.log("bootstrapping webhooks using: "+callback);
         bootstrap('webhooks', callback);
-        console.log("now webhooks['pull_request.js'] points to "+JSON.stringify(webhooks['pull_request.js']));
+        console.log("now webhooks['pull_request'] points to "+JSON.stringify(webhooks['pull_request']));
     }
 ], function(err) {
     if (err) {
